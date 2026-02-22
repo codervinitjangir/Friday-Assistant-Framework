@@ -10,7 +10,7 @@ This showcase repository features the modern, futuristic frontend and utility sc
 
 ### 🎨 User Interface
 
-- **`src/friday/ui/hud.py`**: The main Heads-Up Display (HUD) built with PyQt6. This file handles the floating, transparent UI, dynamic animations, and visual feedback for the user.
+- **`friday/ui/hud.py`**: The main Heads-Up Display (HUD) built with PyQt6. This file handles the floating, transparent UI, dynamic animations, and visual feedback for the user.
 
 ### 🛠️ Configuration & Dependencies
 
@@ -40,7 +40,7 @@ Since the core engine is private and hidden, this UI can be tested or modified i
 
 2. **Run HUD Code**
    ```bash
-   python src/friday/ui/hud.py
+   python friday/ui/hud.py
    ```
    _(Note: To integrate this UI into your own assistant, you will need to build your own engine connecting it to LLMs and Voice IO)._
 
