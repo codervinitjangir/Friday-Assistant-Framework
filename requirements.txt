@@ -1,0 +1,39 @@
+speechrecognition>=3.10.0
+pyttsx3>=2.90
+openai>=1.0.0
+pyautogui>=0.9.54
+pyaudio>=0.2.13
+PyQt6>=6.6.0
+python-dotenv>=1.0.0
+colorama>=0.4.6
+psutil>=5.9.0
+httpx>=0.25.0
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+black
+flake8
+edge-tts
+google-generativeai
+pygame
+gTTS
+screen-brightness-control
+pycaw
+comtypes
+faster-whisper
+chromadb
+sentence-transformers
+pyperclip
+
+# Vision System
+Pillow>=10.0.0
+
+# Email & Calendar
+google-api-python-client>=2.0.0
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-auth-httplib2>=0.1.0
+PyPDF2>=3.0.0
+
+# Semantic Memory
+textblob>=0.17.0
+dateparser>=1.1.0
