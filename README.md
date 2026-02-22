@@ -12,18 +12,9 @@ This showcase repository features the modern, futuristic frontend and utility sc
 
 - **`src/friday/ui/hud.py`**: The main Heads-Up Display (HUD) built with PyQt6. This file handles the floating, transparent UI, dynamic animations, and visual feedback for the user.
 
-### 🛠️ Configuration & Setup
+### 🛠️ Configuration & Dependencies
 
-- **`.env.example`**: A template for the environment variables required to run the assistant, demonstrating the required core APIs (like OpenAI for LLMs).
-- **`Dockerfile`**: Containerization setup for the modular application.
-- **`requirements.txt` / `pyproject.toml`**: The python dependencies handling GUI, AI, Voice, and System integrations.
-
-### 🏃‍♂️ Running & Utilities
-
-- **`Run Friday.bat`**: A convenient Windows batch script for setting up the environment and launching the assistant.
-- **`check_gpu.py`**: Utility script to verify GPU acceleration capabilities for faster local processing.
-- **`list_models.py` / `list_voices.py`**: Scripts to query and manage available TTS voices and LLM models.
-- **`setup_model.py`**: Handles initialization for any local AI models used by the assistant.
+- **`requirements.txt`**: The python dependencies handling GUI, animations, and system packages required to run the interface portion.
 
 ## System Architecture Overview
 
@@ -35,9 +26,9 @@ While the core source code is private, the complete F.R.I.D.A.Y. architecture co
 - **Audio IO**: Wake-word detection, STT (Speech-to-Text) and Edge TTS.
 - **HUD Engine**: The open-source `hud.py` visual interface.
 
-## Quickstart
+### 🏃‍♂️ Running the UI Standalone
 
-If you clone this showcase and wish to build your own engine behind the HUD:
+Since the core engine is private and hidden, this UI can be tested or modified independently:
 
 1. **Setup Environment**
 
@@ -47,17 +38,11 @@ If you clone this showcase and wish to build your own engine behind the HUD:
    pip install -r requirements.txt
    ```
 
-2. **Configure Variables**
-
+2. **Run HUD Code**
    ```bash
-   cp .env.example .env
-   # Add your API keys to the .env file
+   python src/friday/ui/hud.py
    ```
-
-3. **Launch the Core (Requires private engine)**
-   ```bash
-   Run Friday.bat
-   ```
+   _(Note: To integrate this UI into your own assistant, you will need to build your own engine connecting it to LLMs and Voice IO)._
 
 ## License
 
