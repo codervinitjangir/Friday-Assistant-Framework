@@ -1,73 +1,64 @@
-# F.R.I.D.A.Y. Assistant
+# F.R.I.D.A.Y. Assistant - Public Showcase
 
-A modular, extensible personal AI assistant inspired by the MCU. Built with Python, it handles voice commands, executes system actions, and provides a futuristic HUD.
+Welcome to the public showcase repository for the **F.R.I.D.A.Y. AI Assistant** project.
 
-## Features
+This repository contains the **User Interface (UI)**, configuration templates, and setup scripts for the assistant. The core AI processing logic and backend systems are kept in a separate, private repository to protect the proprietary logic.
 
-- **Voice Interaction**: Wake-word activation ("Friday") and natural speech commands.
-- **LLM Intelligence**: Powered by OpenAI (adaptable to local LLMs).
-- **System Control**: Open apps, manage volume, take screenshots.
-- **Memory**: Remembers user details and past interactions via SQLite.
-- **GUI**: A floating HUD built with PyQt6.
-- **Safe**: Confirms destructive actions before execution.
+## What's Included in This Repository?
+
+This showcase repository features the modern, futuristic frontend and utility scripts that power the Friday experience.
+
+### 🎨 User Interface
+
+- **`src/friday/ui/hud.py`**: The main Heads-Up Display (HUD) built with PyQt6. This file handles the floating, transparent UI, dynamic animations, and visual feedback for the user.
+
+### 🛠️ Configuration & Setup
+
+- **`.env.example`**: A template for the environment variables required to run the assistant, demonstrating the required core APIs (like OpenAI for LLMs).
+- **`Dockerfile`**: Containerization setup for the modular application.
+- **`requirements.txt` / `pyproject.toml`**: The python dependencies handling GUI, AI, Voice, and System integrations.
+
+### 🏃‍♂️ Running & Utilities
+
+- **`Run Friday.bat`**: A convenient Windows batch script for setting up the environment and launching the assistant.
+- **`check_gpu.py`**: Utility script to verify GPU acceleration capabilities for faster local processing.
+- **`list_models.py` / `list_voices.py`**: Scripts to query and manage available TTS voices and LLM models.
+- **`setup_model.py`**: Handles initialization for any local AI models used by the assistant.
+
+## System Architecture Overview
+
+While the core source code is private, the complete F.R.I.D.A.Y. architecture consists of:
+
+- **Core Orchestrator**: The central event loop processing commands.
+- **Skill Engine**: A modular plugin system enabling system control, memory retrieval, and web capabilities.
+- **Memory Module**: SQLite vectorized long-term memory.
+- **Audio IO**: Wake-word detection, STT (Speech-to-Text) and Edge TTS.
+- **HUD Engine**: The open-source `hud.py` visual interface.
 
 ## Quickstart
 
-### Prerequisites
+If you clone this showcase and wish to build your own engine behind the HUD:
 
-- Python 3.10+
-- A working microphone and speakers.
-- (Optional) Docker
-
-### Installation
-
-1. **Clone and Setup**
+1. **Setup Environment**
 
    ```bash
-   # Create a virtual environment
    python -m venv .venv
-
-   # Activate it
-   # Windows:
    .venv\Scripts\activate
-   # Mac/Linux:
-   source .venv/bin/activate
-
-   # Install dependencies
    pip install -r requirements.txt
    ```
 
-   _Note: On Windows, you may need to install [PyAudio wheel](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio) manually if pip fails._
-
-2. **Configuration**
+2. **Configure Variables**
 
    ```bash
    cp .env.example .env
+   # Add your API keys to the .env file
    ```
 
-   Edit `.env` and add your `OPENAI_API_KEY`.
-
-3. **Run**
-
+3. **Launch the Core (Requires private engine)**
    ```bash
-   # Launch with GUI
-   python src/main.py --gui
-
-   # Launch headless (terminal only)
-   python src/main.py --headless
+   Run Friday.bat
    ```
-
-## Architecture
-
-- **`src/friday/core`**: The central orchestrator loop.
-- **`src/friday/skills`**: Plugin system for capabilities.
-- **`src/friday/ui`**: PyQt6 interface.
-- **`src/friday/memory`**: SQLite context storage.
-
-## Extending
-
-To add a new skill, create a file in `src/friday/skills/` and use the `@skill` decorator. See `docs/developer_guide.md`.
 
 ## License
 
-MIT
+MIT License (Applicable to the files in this public repository).
